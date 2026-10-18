@@ -1,0 +1,17 @@
+{
+  "name": "ledgerly",
+  "version": "2.0.0",
+  "description": "Ledgerly: SME Finance Copilot. Cash-flow credit passport, 13-week forecast and financing matching, with a web dashboard.",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "demo": "node scripts/demo.js",
+    "test": "node --test test/ledgerly.test.js",
+    "generate": "node data/generate-synthetic.js"
+  },
+  "license": "UNLICENSED"
+}

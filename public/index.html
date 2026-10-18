@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ledgerly</title>
+  <meta name="description" content="Ledgerly turns sales and expense records into a cash forecast, a credit passport and matched financing options.">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="topbar">
+    <div class="wrap topbar-in">
+      <a class="brand" href="/" aria-label="Ledgerly home">
+        <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="15" fill="currentColor"/><circle cx="16" cy="16" r="9.5" fill="none" stroke="var(--marigold)" stroke-width="2.4" stroke-dasharray="3 2.6"/><circle cx="16" cy="16" r="3.4" fill="var(--marigold)"/></svg>
+        <span>Ledgerly</span>
+      </a>
+      <div class="biz" id="biz"></div>
+      <div class="top-actions">
+        <label class="btn btn-quiet" for="file">Upload records</label>
+        <input type="file" id="file" accept=".csv,text/csv" hidden>
+        <button class="btn btn-quiet" id="open-settings" type="button">Settings</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" aria-labelledby="answer">
+      <div class="wrap hero-in">
+        <form class="ask" id="ask">
+          <label for="goal" class="ask-label">What do you need help with?</label>
+          <div class="ask-row">
+            <input id="goal" name="goal" type="text" autocomplete="off" maxlength="500">
+            <button class="btn btn-gold" id="ask-btn" type="submit">Ask Ledgerly</button>
+          </div>
+          <div class="ask-more">
+            <div class="chips" id="chips" role="group" aria-label="Example questions"></div>
+            <details class="ask-options">
+              <summary>Loan options</summary>
+              <div class="ask-options-in">
+                <label>Amount to borrow (₦)
+                  <input id="amount" type="number" min="0" step="10000" inputmode="numeric" placeholder="Let Ledgerly work it out">
+                </label>
+                <label class="check"><input id="collateral" type="checkbox"> I can offer collateral</label>
+              </div>
+            </details>
+          </div>
+        </form>
+        <div class="answer" id="answer-wrap" aria-live="polite">
+          <h1 id="answer" class="answer-head"></h1>
+          <p id="answer-sub" class="answer-sub"></p>
+        </div>
+      </div>
+    </section>
+
+    <div class="wrap">
+      <section class="panel forecast" aria-labelledby="fc-title">
+        <div class="panel-head">
+          <div>
+            <h2 id="fc-title">Cash in the bank, next 13 weeks</h2>
+            <p class="muted" id="fc-sub"></p>
+          </div>
+          <ul class="legend" id="fc-legend"></ul>
+        </div>
+        <div class="chart" id="fc-chart"></div>
+        <details class="numbers">
+          <summary>Show the numbers</summary>
+          <div class="table-scroll" id="fc-table"></div>
+        </details>
+      </section>
+
+      <div class="cols">
+        <section class="panel passport" aria-labelledby="pp-title" id="passport"></section>
+        <div class="stack">
+          <section class="panel" aria-labelledby="al-title">
+            <h2 id="al-title">Things to watch</h2>
+            <ul class="alerts" id="alerts"></ul>
+          </section>
+          <section class="panel" aria-labelledby="mo-title">
+            <h2 id="mo-title">Monthly sales</h2>
+            <p class="muted" id="mo-sub"></p>
+            <div class="chart chart-bars" id="mo-chart"></div>
+          </section>
+        </div>
+      </div>
+
+      <section class="financing" aria-labelledby="fin-title" id="financing"></section>
+
+      <section class="behind" aria-labelledby="bh-title">
+        <h2 id="bh-title">What Ledgerly did</h2>
+        <div class="behind-cols">
+          <div>
+            <h3>Steps for this question</h3>
+            <ol class="steps" id="steps"></ol>
+          </div>
+          <div>
+            <div class="audit-head">
+              <h3>Activity record</h3>
+              <span id="chain" class="chain"></span>
+            </div>
+            <ol class="audit" id="audit"></ol>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap foot-in">
+      <p>Ledgerly demo. The records are synthetic and no real money moves: the lender, SMS and bank account are simulated.</p>
+      <button class="btn btn-quiet" id="reset" type="button">Reset sandbox account</button>
+    </div>
+  </footer>
+
+  <dialog id="settings" aria-labelledby="set-title">
+    <form method="dialog" id="settings-form">
+      <h2 id="set-title">Settings</h2>
+      <fieldset>
+        <legend>Business</legend>
+        <label>Name <input name="name" maxlength="80" required></label>
+        <div class="two">
+          <label>Trade <input name="sector" maxlength="60"></label>
+          <label>City <input name="city" maxlength="60"></label>
+        </div>
+        <label>Cash in the bank today (₦) <input name="opening" type="number" min="0" step="1000" required></label>
+      </fieldset>
+      <fieldset>
+        <legend>What Ledgerly may do with your records</legend>
+        <label class="check"><input type="checkbox" name="consent" value="credit_assessment"> Work out my credit passport</label>
+        <label class="check"><input type="checkbox" name="consent" value="share_with_lender"> Prepare a summary I can share with a lender</label>
+      </fieldset>
+      <fieldset>
+        <legend>Records</legend>
+        <p class="muted small" id="set-source"></p>
+        <div class="row-btns">
+          <button class="btn btn-quiet" type="button" id="use-sample">Switch to sample records</button>
+          <a class="btn btn-quiet" href="/sample.csv" download>Download CSV template</a>
+        </div>
+        <p class="muted small">Your CSV needs the columns date, amount, description, channel, counterparty. Money in is positive, money out is negative.</p>
+      </fieldset>
+      <div class="dialog-actions">
+        <button class="btn btn-quiet" value="cancel" formnovalidate>Cancel</button>
+        <button class="btn btn-ink" value="save" id="save-settings">Save and rerun</button>
+      </div>
+    </form>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+  <div class="tip" id="tip" role="presentation" hidden></div>
+
+  <script type="module" src="/app.js"></script>
+</body>
+</html>

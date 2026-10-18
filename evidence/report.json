@@ -1,0 +1,267 @@
+{
+  "goal": "I need to stock up for the December rush. Do I need financing, and apply for the best option?",
+  "plan": [
+    "forecast",
+    "passport",
+    "alerts",
+    "match",
+    "pack",
+    "notify",
+    "submit"
+  ],
+  "status": "pending_approval",
+  "pending": "submit",
+  "passport": {
+    "score": 83.2,
+    "grade": "A",
+    "factors": [
+      {
+        "key": "history",
+        "label": "Records history",
+        "weight": 10,
+        "score01": 1,
+        "points": 10,
+        "explanation": "12 complete months of records."
+      },
+      {
+        "key": "stability",
+        "label": "Revenue stability",
+        "weight": 20,
+        "score01": 0.606,
+        "points": 12.1,
+        "explanation": "Monthly revenue varies by 24% (lower is steadier)."
+      },
+      {
+        "key": "margin",
+        "label": "Operating margin",
+        "weight": 20,
+        "score01": 1,
+        "points": 20,
+        "explanation": "Operating margin is 24% before loan repayments and owner draws."
+      },
+      {
+        "key": "growth",
+        "label": "Sales trend",
+        "weight": 10,
+        "score01": 0.281,
+        "points": 2.8,
+        "explanation": "Last 3 months vs previous 3: -9%."
+      },
+      {
+        "key": "concentration",
+        "label": "Customer spread",
+        "weight": 10,
+        "score01": 1,
+        "points": 10,
+        "explanation": "Largest named customer is 2% of named sales."
+      },
+      {
+        "key": "coverage",
+        "label": "Debt-service coverage",
+        "weight": 20,
+        "score01": 1,
+        "points": 20,
+        "explanation": "Operating cash covers repayments 22.9x."
+      },
+      {
+        "key": "discipline",
+        "label": "Repayment discipline",
+        "weight": 10,
+        "score01": 0.833,
+        "points": 8.3,
+        "explanation": "Repayments recorded in 10 of 12 months since the first one."
+      }
+    ],
+    "improve": [
+      "Smooth revenue with repeat customers, pre-orders or subscriptions.",
+      "Grow monthly sales; even steady 5% growth lifts this factor."
+    ],
+    "weekly_repayment_capacity": 76738.58841580362,
+    "metrics": {
+      "months": 12,
+      "avg_monthly_revenue": 2828983.3333333335,
+      "revenue_cv": 0.23633811898645346,
+      "op_margin": 0.23572366986962337,
+      "avg_monthly_op_cash": 666858.3333333334,
+      "weekly_repayment_capacity": 76738.58841580362,
+      "top_customer_share": 0.024398713572598308,
+      "cash_share": 0.260844590812954
+    }
+  },
+  "alerts": [
+    {
+      "severity": "medium",
+      "msg": "If sales are 20% weaker, cash could fall to ₦357,653 in the week of 2026-11-30, below your two-week buffer of ₦1,230,892."
+    }
+  ],
+  "match": {
+    "need": 880000,
+    "offers": [
+      {
+        "product_id": "MFB-GRP",
+        "name": "Microfinance group loan",
+        "amount": 880000,
+        "term_weeks": 24,
+        "total_cost": 139446,
+        "effective_apr": 0.343,
+        "weekly_payment": 42477,
+        "affordable": true,
+        "days_to_fund": 7,
+        "collateral_required": false,
+        "covers_need": true,
+        "why": "Covers the gap and fits your repayment capacity"
+      },
+      {
+        "product_id": "MM-OD",
+        "name": "Mobile-money overdraft",
+        "amount": 150000,
+        "term_weeks": 4,
+        "total_cost": 11423,
+        "effective_apr": 0.99,
+        "weekly_payment": 40356,
+        "affordable": true,
+        "days_to_fund": 0,
+        "collateral_required": false,
+        "covers_need": false,
+        "why": "Affordable but only covers part of the gap"
+      },
+      {
+        "product_id": "SUP-NET30",
+        "name": "Supplier credit (2/10 net 30)",
+        "amount": 880000,
+        "term_weeks": 2.9,
+        "total_cost": 17600,
+        "effective_apr": 0.359,
+        "weekly_payment": 309517,
+        "affordable": false,
+        "days_to_fund": 0,
+        "collateral_required": false,
+        "covers_need": true,
+        "why": "Weekly payment exceeds your repayment capacity"
+      },
+      {
+        "product_id": "FIN-CF",
+        "name": "Fintech cash-flow loan",
+        "amount": 880000,
+        "term_weeks": 12,
+        "total_cost": 90708,
+        "effective_apr": 0.447,
+        "weekly_payment": 80892,
+        "affordable": false,
+        "days_to_fund": 2,
+        "collateral_required": false,
+        "covers_need": true,
+        "why": "Weekly payment exceeds your repayment capacity"
+      }
+    ],
+    "note": ""
+  },
+  "pack": {
+    "business": {
+      "name": "Mama Ngozi Fabrics (synthetic)",
+      "sector": "fabric retail",
+      "city": "Lagos"
+    },
+    "passport": {
+      "score": 83.2,
+      "grade": "A",
+      "factors": [
+        {
+          "label": "Records history",
+          "points": 10,
+          "explanation": "12 complete months of records."
+        },
+        {
+          "label": "Revenue stability",
+          "points": 12.1,
+          "explanation": "Monthly revenue varies by 24% (lower is steadier)."
+        },
+        {
+          "label": "Operating margin",
+          "points": 20,
+          "explanation": "Operating margin is 24% before loan repayments and owner draws."
+        },
+        {
+          "label": "Sales trend",
+          "points": 2.8,
+          "explanation": "Last 3 months vs previous 3: -9%."
+        },
+        {
+          "label": "Customer spread",
+          "points": 10,
+          "explanation": "Largest named customer is 2% of named sales."
+        },
+        {
+          "label": "Debt-service coverage",
+          "points": 20,
+          "explanation": "Operating cash covers repayments 22.9x."
+        },
+        {
+          "label": "Repayment discipline",
+          "points": 8.3,
+          "explanation": "Repayments recorded in 10 of 12 months since the first one."
+        }
+      ]
+    },
+    "forecast": {
+      "min_balance": 357653,
+      "min_week": "2026-11-30",
+      "first_negative_week": null,
+      "safety_buffer": 1230892,
+      "need": 873239,
+      "end_balance": 1111107,
+      "opening_balance": 650000
+    },
+    "request": {
+      "product_id": "MFB-GRP",
+      "name": "Microfinance group loan",
+      "amount": 880000,
+      "term_weeks": 24,
+      "total_cost": 139446,
+      "effective_apr": 0.343,
+      "weekly_payment": 42477,
+      "affordable": true,
+      "days_to_fund": 7,
+      "collateral_required": false,
+      "covers_need": true,
+      "why": "Covers the gap and fits your repayment capacity"
+    },
+    "excluded_from_pack": [
+      "raw transactions",
+      "customer identities",
+      "phone and account numbers"
+    ]
+  },
+  "submit": null,
+  "audit_chain_valid": true,
+  "forecast": {
+    "base": {
+      "min_balance": 686716.6666666666,
+      "min_week": "2026-10-05",
+      "first_negative_week": null,
+      "safety_buffer": 1230892.3076923077,
+      "need": 544175.6410256411,
+      "end_balance": 3226583.3333333335,
+      "opening_balance": 650000
+    },
+    "downside": {
+      "min_balance": 357653.3333333336,
+      "min_week": "2026-11-30",
+      "first_negative_week": null,
+      "safety_buffer": 1230892.3076923077,
+      "need": 873238.9743589741,
+      "end_balance": 1111106.6666666672,
+      "opening_balance": 650000
+    },
+    "upside": {
+      "min_balance": 809848.3333333334,
+      "min_week": "2026-10-05",
+      "first_negative_week": null,
+      "safety_buffer": 1230892.3076923077,
+      "need": 421043.9743589744,
+      "end_balance": 4284321.666666668,
+      "opening_balance": 650000
+    }
+  },
+  "summary": "Your cash-flow credit passport: 83.2/100 (grade A). Biggest levers: Smooth revenue with repeat customers, pre-orders or subscriptions. Grow monthly sales; even steady 5% growth lifts this factor.\n[MEDIUM] If sales are 20% weaker, cash could fall to ₦357,653 in the week of 2026-11-30, below your two-week buffer of ₦1,230,892.\nBest fit for a ₦880,000 gap: Microfinance group loan ₦880,000 over 24 weeks, total cost ₦139,446 (effective APR 34%), about ₦42,477/week. Covers the gap and fits your repayment capacity.\nWaiting for your approval before I submit anything. I will not move money without it."
+}
