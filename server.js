@@ -269,9 +269,11 @@ const server = createServer(async (req, res) => {
 });
 
 // ---- start
-const HOST = process.env.LEDGERLY_HOST || (HOSTED ? undefined : '127.0.0.1');
+// Listen on every network interface (what hosting proxies need). Set LEDGERLY_HOST=127.0.0.1 to keep it private to this PC.
+const HOST = process.env.LEDGERLY_HOST || undefined;
 let port = HOSTED ? Number(PORT_ENV) : 3000;
-const noOpen = HOSTED || process.argv.includes('--no-open') || process.env.NO_OPEN || process.env.CI;
+// Only open a browser when someone started it by hand in a terminal on their own computer.
+const noOpen = HOSTED || !process.stdout.isTTY || process.env.NODE_ENV === 'production' || process.argv.includes('--no-open') || process.env.NO_OPEN || process.env.CI;
 
 server.on('error', (e) => {
   if (e.code === 'EADDRINUSE' && !HOSTED && port < 3010) {
@@ -285,7 +287,7 @@ server.on('error', (e) => {
 
 server.on('listening', () => {
   const url = `http://localhost:${port}`;
-  console.log(HOSTED ? `Ledgerly listening on port ${port}` : `\n  Ledgerly is running at ${url}\n  Press Ctrl+C to stop.\n`);
+  console.log(HOSTED || !process.stdout.isTTY ? `Ledgerly listening on port ${port}` : `\n  Ledgerly is running at ${url}\n  Press Ctrl+C to stop.\n`);
   if (noOpen) return;
   const cmd = process.platform === 'win32' ? `start "" "${url}"` : process.platform === 'darwin' ? `open "${url}"` : `xdg-open "${url}"`;
   exec(cmd, () => {});
